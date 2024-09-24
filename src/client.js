@@ -5,6 +5,7 @@ const protocol = require('./protocol');
 
 const quoteSessionGenerator = require('./quote/session');
 const chartSessionGenerator = require('./chart/session');
+const historySessionGenerator = require('./chart/history');
 
 /**
  * @typedef {Object} Session
