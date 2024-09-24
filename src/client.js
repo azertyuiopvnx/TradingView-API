@@ -216,7 +216,7 @@ module.exports = class Client {
    * @prop {string} [token] User auth token (in 'sessionid' cookie)
    * @prop {string} [signature] User auth token signature (in 'sessionid_sign' cookie)
    * @prop {boolean} [DEBUG] Enable debug mode
-   * @prop {'data' | 'prodata' | 'widgetdata'} [server] Server type
+   * @prop {'data' | 'prodata' | 'widgetdata' | 'history-data'} [server] Server type
    * @prop {string} [location] Auth page location (For france: https://fr.tradingview.com/)
    */
 
@@ -278,6 +278,7 @@ module.exports = class Client {
   Session = {
     Quote: quoteSessionGenerator(this.#clientBridge),
     Chart: chartSessionGenerator(this.#clientBridge),
+    History: historySessionGenerator(this.#clientBridge),
   };
 
   /**
